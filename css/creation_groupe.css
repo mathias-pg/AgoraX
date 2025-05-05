@@ -1,0 +1,184 @@
+/* Style global */
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Conteneur principal */
+.container {
+    background: #fff;
+    color: #333;
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre */
+h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #5c67f2;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Champs de formulaire */
+form input[type="text"],
+form input[type="file"],
+form input[type="number"],
+form select {
+    width: 97%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form textarea {
+    width: 97%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    max-height: 20px; /* Limite la hauteur maximale */
+    resize: vertical;  /* Permet de redimensionner uniquement en hauteur */
+}
+
+
+/* Centrer les labels Nom et Description */
+form label {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Sélecteur de couleur */
+form input[type="color"] {
+    width: 50px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Conteneur des thèmes */
+#theme-container {
+    text-align: left;
+}
+
+.theme-input {
+    display: flex;
+    gap: 10px;
+}
+
+.theme-input input {
+    flex: 1;
+}
+
+.theme-input button {
+    background: #5c67f2;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.theme-input button:hover {
+    background: #5058e2;
+}
+
+/* Liste des thèmes */
+#theme-list {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 10px;
+    height: 50px; 
+    overflow-y: auto; 
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}   
+
+#theme-list li {
+    background: #f4f4f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-item button.remove-theme {
+    background: #ff4b5c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.theme-item button.remove-theme:hover {
+    background: #e04351;
+}
+
+/* Bouton Créer le groupe */
+form .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+form .buttons input[type="submit"] {
+    background: #5c67f2;
+    color: #fff;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+form .buttons input[type="submit"]:hover {
+    background: #5058e2;
+}
+
+/* Lien retour */
+a {
+    color: #5c67f2;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form .instructions {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+

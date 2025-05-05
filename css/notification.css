@@ -1,0 +1,92 @@
+/* Style global */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Conteneur principal */
+.container {
+    background: #fff;
+    color: #333;
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre principal */
+h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #5c67f2;
+}
+
+/* Options de notification */
+.notification-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-option:last-child {
+    border-bottom: none;
+}
+
+.notification-option label {
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+.notification-option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #5c67f2;
+    cursor: pointer;
+}
+
+/* Bouton Enregistrer */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;  /* Espacement par rapport aux checkboxes */
+}
+
+.submit-btn {
+    background: #5c67f2;
+    color: #fff;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    background: #5058e2;
+}
+
+/* Lien retour */
+a {
+    color: #5c67f2;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

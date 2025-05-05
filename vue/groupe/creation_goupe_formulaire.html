@@ -1,0 +1,29 @@
+<form class="group-form" action="creation_groupe.php" method="POST" enctype="multipart/form-data">
+    <input type="text" name="nom" placeholder="Nom du groupe" required>
+
+    <textarea name="description" placeholder="Description du groupe" rows="4" required></textarea>
+
+    <label for="budget" class="instructions">Budget global à l'année :</label>
+    <input type="number" id="budget" name="budget"/>
+
+    <label for="themes" class="instructions">Thèmes du groupe :</label>
+    <div id="theme-container">
+        <div class="theme-input">
+            <input type="text" id="new-theme" placeholder="Ajouter un nouveau thème">
+            <button type="button" id="add-theme-button">Ajouter</button>
+        </div>
+        <ul id="theme-list"></ul>
+    </div>
+
+    <label for="couleur" class="instructions">Choisissez une couleur pour votre groupe :</label>
+    <input type="color" id="couleur" name="couleur" value="#5c67f2">
+
+    <label for="image" class="instructions">Ajoutez une image pour votre groupe :</label>
+    <input type="file" id="image" name="image" accept="image/*">
+
+    <input type="hidden" id="themes-hidden" name="themes">
+
+    <div class="buttons">
+        <input type="submit" value="Créer le groupe">
+    </div>
+</form>

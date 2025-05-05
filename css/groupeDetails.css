@@ -1,0 +1,951 @@
+
+
+
+
+/* Style global */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+header {
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
+    z-index: 10;
+    border-radius: 0 0 20px 20px; /* Coins arrondis pour un style moderne */
+    transition: background-color 0.3s ease;
+}
+
+/* Style du bouton de retour */
+header .back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 25px;  /* Bordure arrondie pour un effet moderne */
+    transition: background-color 0.3s, color 0.3s;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header .back-btn:hover {
+    background-color: white;
+    color: #007bff; /* Change la couleur du texte lors du survol */
+}
+
+/* Style pour le nom du groupe */
+header .group-name {
+    margin: 0;
+    font-size: 36px;  /* Taille plus grande pour une meilleure visibilité */
+    font-weight: 700;  /* Texte plus bold */
+    text-align: center;
+    color: white;
+    text-transform: uppercase;  /* Met le texte en majuscules pour un effet plus percutant */
+    letter-spacing: 2px;  /* Espacement entre les lettres pour plus de sophistication */
+    animation: fadeIn 1s ease-out;  /* Ajoute une animation d'apparition */
+}
+
+/* Animation pour l'apparition du texte */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main content */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.left-panel {
+    flex: 3;
+    background-color: #fbfbfb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Nécessaire pour positionner le bouton correctement */
+    overflow: hidden; /* Assure qu'aucun débordement n'apparaît */
+}
+
+.left-panel h1 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+
+.add-proposition-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 2; /* S'assure que le bouton reste visible au-dessus du contenu */
+}
+
+.add-proposition-btn img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.add-proposition-btn img:hover {
+    transform: scale(1.1); /* Zoom léger au survol */
+}
+
+
+
+
+.proposition-item {
+    margin-bottom: 25px;  /* Espacement entre chaque proposition */
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 12px;  /* Coins plus arrondis */
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Ombre légère */
+}
+
+.proposition-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);  /* Légère élévation au survol */
+}
+
+
+
+
+.proposition-item .author {
+    display: flex;
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    gap: 15px;  /* Espacement horizontal entre la photo et le texte */
+    margin-bottom: 15px;
+    flex-wrap: nowrap;  /* Empêche le texte de passer à la ligne */
+    width: 100%; /* S'assure que l'élément occupe toute la largeur disponible */
+}
+
+.author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+}
+
+.author span {
+    font-size: 18px;  /* Agrandir la taille du texte */
+    font-weight: 600; /* Texte en gras */
+    color: #333;
+    margin-left : 10px;
+    position :absolute;
+    top: 40px;
+}
+
+
+
+
+/* Titre de la proposition */
+.proposition-item h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Description de la proposition */
+.proposition-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.proposition-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;  /* Espacement entre les boutons */
+    margin-top: 15px;
+}
+
+.action-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.action-container img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.action-container img:hover {
+    transform: scale(1.1);
+}
+
+.like-count, .dislike-count, .vote-count, .comments-count {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    min-width: 30px;
+    text-align: center;
+}
+
+.vote-count {
+    margin-left:5px;
+}
+
+
+.proposition-item .comments-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent; 
+    padding: 0; 
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out; 
+}
+
+.comments-btn img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%; 
+}
+
+.proposition-item .comments-btn:hover img {
+    transform: scale(1.1); 
+}
+
+
+.proposition-item .emoji-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.proposition-item .emoji-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
+.comments-section {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.comments-section.visible {
+    display: block;
+}
+
+.publish-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.publish-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
+.right-panel {
+    flex: 1;
+    background-color: #fbfbfb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.right-panel h1 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+.add-member-btn {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.add-member-btn img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.add-member-btn img:hover {
+    transform: scale(1.1); 
+}
+
+
+.member-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.member-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.info-icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.member-item:hover {
+    background-color: #e9f5ff;
+    transform: translateY(-3px);
+}
+
+/* Conteneur principal : Aligner texte et boutons sur la même ligne */
+.member-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Partie texte (Nom et Rôle) */
+.member-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    color: #333;
+    flex: 1;  /* Prend tout l'espace disponible */
+}
+
+/* Conteneur des boutons */
+.member-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espacement vertical entre les boutons */
+}
+
+
+.member-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left : 20px; /* Espacement vertical entre les boutons */
+}
+
+
+/* Barre des emojis */
+.emoji-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.emoji-picker.hidden {
+    display: none;
+}
+
+.emoji {
+    font-size: 17px; /* Taille réduite des emojis */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.emoji-picker {
+    display: flex;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.emoji-picker .emoji:hover {
+    transform: scale(1.2);
+}
+
+/* Barre d'ajout de commentaire */
+.add-comment {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.add-comment input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Bouton Emoji */
+.toggle-emoji-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    margin: 0 5px; /* Espacement autour du bouton */
+    color: #007bff;
+}
+
+.toggle-emoji-btn:hover {
+    color: #0056b3;
+    transform: scale(1.1);
+}
+
+
+.trigger-vote-btn {
+    background-color: #707af4;  /* Vert */
+    color: white;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: auto; /* Pousse à droite */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trigger-vote-btn:hover {
+    background-color: #5c67f2;  /* Vert foncé */
+    transform: scale(1.05);
+}
+
+
+.comment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Centre verticalement les éléments */
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;  /* Permet de passer à la ligne si nécessaire */
+    word-wrap: break-word;  /* Coupe les mots longs */
+}
+
+.comment-content {
+    flex: 1;  /* Permet au texte d'occuper tout l'espace disponible */
+}
+
+.comment-content p {
+    margin: 10px 0 0;
+    white-space: normal;  /* Le texte long passe à la ligne */
+    word-wrap: break-word;  /* Coupe les mots trop longs */
+    overflow-wrap: break-word;
+    max-width: 100%;  /* Empêche le texte de dépasser la largeur du conteneur */
+}
+
+.comment-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;  /* Empêche les boutons de se réduire */
+}
+
+.action-container-comments {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-container-comments img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.action-container-comments img:hover {
+    transform: scale(1.1);
+}
+
+.dislike-count-comments-member{
+    margin-right: 23px;
+}
+
+.like-count-comments, .dislike-count-comments, .dislike-count-comments-member {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    min-width: 30px;
+    text-align: center;
+}
+
+.delete-link-comments {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-link-comments:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+
+
+/* Boutons de suppression pour propositions, commentaires et exclusion */
+.delete-link{
+    color: white;
+    background-color: #dc3545; /* Rouge */
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    position: absolute;
+    cursor: pointer;
+}
+
+.delete-link:hover {
+    background-color: #c82333; /* Rouge foncé */
+    transform: scale(1.1);
+}
+
+/* Bouton supprimer pour une proposition */
+.proposition-item .delete-link {
+    top: 10px;
+    right: 10px;
+}
+
+.comments-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;  /* Assure que la liste prend toute la largeur */
+}
+
+/* Bouton supprimer pour un commentaire */
+.comments-section ul li {
+    position: relative;
+    padding: 10px 20px; /* Ajoute de l'espace intérieur */
+    margin-bottom: 10px; /* Ajoute un espacement entre les commentaires */
+    background-color: #ffffff; /* Optionnel : une couleur de fond pour chaque commentaire */
+    border: 1px solid #ddd; /* Optionnel : une bordure légère pour les délimiter */
+    border-radius: 5px; /* Donne un aspect arrondi */
+}
+
+.comments-section ul li .delete-link {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+
+
+/* Boutons de suppression pour propositions, commentaires et exclusion */
+.signalement-link {
+    width : 30px;
+    height : 30px;
+    transition: background-color 0.3s, transform 0.2s;
+    position: absolute;
+    cursor: pointer;
+}
+
+.signalement-link img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.signalement-link:hover {
+    transform: scale(1.1);
+}
+
+/* Bouton supprimer pour une proposition */
+.proposition-item .signalement-link {
+    top: 10px;
+    right: 10px;
+}
+
+/* Bouton supprimer pour un commentaire */
+.comments-section ul li {
+    position: relative;
+    padding: 10px 20px; /* Ajoute de l'espace intérieur */
+    margin-bottom: 10px; /* Ajoute un espacement entre les commentaires */
+    background-color: #ffffff; /* Optionnel : une couleur de fond pour chaque commentaire */
+    border: 1px solid #ddd; /* Optionnel : une bordure légère pour les délimiter */
+    border-radius: 5px; /* Donne un aspect arrondi */
+}
+
+.comments-section ul li .signalement-link {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+
+
+
+
+.promote-link,
+.exclude-link {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 100px; /* Uniformiser la taille des boutons */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Bouton Promouvoir */
+.promote-link {
+    background-color: #28a745;  /* Vert */
+    color: white;
+}
+
+.promote-link:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Bouton Exclure */
+.exclude-link {
+    background-color: #dc3545;  /* Rouge */
+    color: white;
+}
+
+.exclude-link:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+
+.proposition-item .author {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555; /* Couleur gris foncé */
+    margin-bottom: 8px; /* Espacement entre le nom de l'auteur et le reste de la proposition */
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+.vote-item {
+    background: linear-gradient(135deg, #ffffff, #f8f8f8);
+    position : relative;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vote-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.vote-item h3 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #333;
+    font-weight: 600;
+}
+
+.vote-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-vote-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.close-vote-btn:hover {
+    background-color: #c9302c;
+}
+
+
+.vote-item p {
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.4;
+    font-size: 0.95em;
+}
+
+.vote-closed {
+    font-weight: 600;
+    color: #e74c3c;
+    margin-top: 12px;
+    background-color: #fdecea;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.vote-done {
+    color: #3498db;
+    font-style: italic;
+    text-align: center;
+    padding: 8px;
+    margin-top: 12px;
+    background-color: #ebf5fb;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.form-vote {
+    margin-top: 18px;
+    background-color: #fafafa;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.05);
+}
+
+.form-vote label {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1em;
+    cursor: pointer;
+    color: #333;
+}
+
+.form-vote label:hover {
+    color: #007bff;
+}
+
+.form-vote input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.1);
+}
+
+.form-vote select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95em;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.form-vote select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.form-vote button {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-vote button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.vote-section h1 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd;
+    display: inline-block;
+    padding-bottom: 10px;
+    letter-spacing: 1.2px;
+}
+
+.vote-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vote-section ul li {
+    margin-bottom: 20px;
+}
+
+.vote-section {
+    margin: 40px 0;
+}
+
+
+.resultat {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-left: 5px solid #5cb85c;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.resultat:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.resultat p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+
+
+.infos-votes{
+    text-decoration: none;
+    border-radius: 5px;
+    top : 20px;
+    right : 20px;
+    width : 30px;
+    height : 30px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.infos-votes img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.infos-votes:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        flex: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

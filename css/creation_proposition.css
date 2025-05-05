@@ -1,0 +1,158 @@
+/* Style global */
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Conteneur principal */
+.container {
+    background: #fff;
+    color: #333;
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Titre principal */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #5c67f2;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Champs de formulaire */
+form input[type="text"],
+form input[type="file"],
+form input[type="number"],
+form select {
+    width: 97%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #5c67f2;
+    box-shadow: 0 0 5px rgba(92, 103, 242, 0.5);
+}
+
+form textarea {
+    width: 97%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    max-height: 20px;
+    resize: vertical;
+}
+
+/* Centrer les labels Nom et Description */
+form label {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Garde les labels alignés à gauche */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Centrage du bouton */
+.button-container {
+    display: flex;
+    justify-content: center;  /* Centre le bouton horizontalement */
+    margin-top: 20px;
+}
+
+form .button-container button.submit-btn {
+    background: #5c67f2;
+    color: #fff;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+form .button-container button.submit-btn:hover {
+    background: #5058e2;
+}
+
+/* Adaptation des tailles pour les thèmes */
+form select {
+    width: 97%; /* Même taille que les champs texte */
+}
+
+/* Lien retour */
+a {
+    color: #5c67f2;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form .instructions {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .submit-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}

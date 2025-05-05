@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer les Notifications</title>
+    <link rel="stylesheet" href="./../../css/notification.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gérer vos notifications</h1>
+        <form action="affichage_notifications.php" method="GET">
+            <div class="notification-option">
+                <label for="propositions">
+                    <input type="checkbox" name="propositions" id="propositions">
+                    Notifications des propositions
+                </label>
+            </div>
+            <div class="notification-option">
+                <label for="commentaires">
+                    <input type="checkbox" name="commentaires" id="commentaires">
+                    Notifications des commentaires
+                </label>
+            </div>
+            <div class="notification-option">
+                <label for="signalements">
+                    <input type="checkbox" name="signalements" id="signalements">
+                    Notifications des signalements
+                </label>
+            </div>
+            <div class="notification-option">
+                <label for="mobile">
+                    <input type="checkbox" name="mobile" id="mobile">
+                    Notifications sur l'application mobile
+                </label>
+            </div>
+            <div class="notification-option">
+                <label for="email">
+                    <input type="checkbox" name="email" id="email">
+                    Notifications par email
+                </label>
+            </div>
+            <div class="notification-option">
+                <label for="journalier">
+                    <input type="checkbox" name="journalier" id="journalier">
+                    Notifications journalières
+                </label>
+            </div>
+            <div class="notification-option">
+                <label for="hebdomadaire">
+                    <input type="checkbox" name="hebdomadaire" id="hebdomadaire">
+                    Notifications hebdomadaires
+                </label>
+            </div>
+            
+            <div class="btn-container">
+                <button type="submit" class="submit-btn">Enregistrer</button>
+            </div>
+            
+        </form>
+
+        <a href="affichage_notifications.php" >Retour aux notifications</a>
+    </div>
+</body>
+</html>

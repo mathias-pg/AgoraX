@@ -1,0 +1,91 @@
+/* Style global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo {
+    display: block; /* S'assure que l'image se comporte comme un bloc */
+    margin: 0 auto 20px; /* Centre horizontalement et ajoute un espace en bas */
+    max-width: 175px; /* Ajuste la largeur maximale (modifiez si nécessaire) */
+    height: auto; /* Conserve les proportions de l'image */
+}
+
+/* Conteneur principal */
+.container {
+    background: #ffffff;
+    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Titre */
+.container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #6a11cb;
+}
+
+/* Informations */
+.container p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Boutons */
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.buttons a {
+    padding: 15px 30px;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    transition: 0.3s, transform 0.2s;
+}
+
+.btn-accept {
+    background: #34c759;
+}
+
+.btn-accept:hover {
+    background: #28a745;
+    transform: scale(1.05);
+}
+
+.btn-decline {
+    background: #ff3b30;
+}
+
+.btn-decline:hover {
+    background: #e63928;
+    transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
